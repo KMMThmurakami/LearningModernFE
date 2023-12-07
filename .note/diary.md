@@ -39,3 +39,9 @@ npx create-react-app . --template typescript
 
 mac での環境最適化とセクション 2-5 の設定変更
 全然進められなかった
+
+## 2024/12/07
+
+セクション 2-7 まで
+やってて思ったが、解説が薄いので以下も参考に見ている
+https://typescriptbook.jp
