@@ -57,6 +57,42 @@ const userA: USER = {
 }
 console.log(userA);
 
+// =================================
+// 2-7
+// Union Types
+// https://typescriptbook.jp/reference/values-types-variables/union
+// https://typescriptbook.jp/reference/values-types-variables/discriminated-union
+// =================================
+let value: boolean | number;
+value = true;
+value = 10;
+console.log(value);
+
+let arrayUni: (number | string)[];
+arrayUni = [0, 1, 2, "string"];
+console.log(arrayUni);
+
+type UploadStatus = InProgress | Success | Failure;
+type InProgress = { type: "InProgress"; progress: number };
+type Success = { type: "Success" };
+type Failure = { type: "Failure"; error: Error };
+
+function printStatus(status: UploadStatus) {
+  if (status.type === "InProgress") {
+    console.log(`アップロード中:${status.progress}%`);
+  } else if (status.type === "Success") {
+    console.log("アップロード成功", status);
+  } else if (status.type === "Failure") {
+    console.log(`アップロード失敗:${status.error.message}`);
+  } else {
+    console.log("不正なステータス: ", status);
+  }
+}
+
+// 使用例
+const successStatus: UploadStatus = { type: "Success" };
+printStatus(successStatus);
+
 function App() {
   return (
     <div className="App">
