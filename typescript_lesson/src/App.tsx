@@ -213,6 +213,71 @@ let newanimal: typeof animal = {
 };
 
 // =================================
+// 2-11
+// keyof型演算子
+// https://typescriptbook.jp/reference/type-reuse/keyof-type-operator
+// =================================
+// keyofはオブジェクトの型からプロパティ名を型として返す型演算子
+type KEYS = {
+  primary: string;
+  secondary: string;
+};
+
+// 文字列リテラル型の"primary""secondary"が得られる
+// 2つ以上のプロパティがあるオブジェクトの型にkeyofを使った場合は、すべてのプロパティ名がユニオン型で返される
+let key: keyof KEYS;
+key = "primary";
+
+const SPORTS = {
+  soccer: "Soccer",
+  baseball: "Baseball",
+};
+
+let keySports: keyof typeof SPORTS;
+keySports = "soccer";
+
+// インデックス型にkeyofを使うと、インデックスキーの型が返る
+type MapLike = { [K: string]: any };
+type MapKeys = keyof MapLike;
+// キーがstringのインデックス型は、stringではなくstring | numberが返ります。
+// number型のキーアクセスのobj[0]はobj["0"]と同じになるからです。
+
+// インデックス型
+// https://typescriptbook.jp/reference/values-types-variables/object/index-signature
+
+// インデックス型のオブジェクトであれば、フィールド名が定義されていないプロパティも代入できます。
+// たとえば、インデックス型{ [K: string]: number }には、値がnumber型であれば、aやbなど定義されていないフィールドに代入できます。
+let obj: {
+  [K: string]: number;
+};
+
+obj = { a: 1, b: 2 }; // OK
+obj.c = 4; // OK
+obj["d"] = 5; // OK
+
+// Mapped Typesにkeyofを使うと、そのキーの型が返ります。
+type MapLike2 = { [K in "x" | "y" | "z"]: any };
+type MapKeys2 = keyof MapLike2;
+
+// Mapped Types
+// https://typescriptbook.jp/reference/type-reuse/mapped-types
+
+// インデックス型では設定時はどのようなキーも自由に設定できてしまい、アクセス時は毎回undefinedかどうかの型チェックが必要です。
+// 入力の形式が決まっているのであればMapped Typesの使用を検討できます。
+type SystemSupportLanguage = "en" | "fr" | "it" | "es";
+type Butterfly = {
+  [key in SystemSupportLanguage]: string;
+};
+
+const butterflies: Butterfly = {
+  en: "Butterfly",
+  fr: "Papillon",
+  it: "Farfalla",
+  es: "Mariposa",
+  // de: "Schmetterling",
+};
+
+// =================================
 
 function App() {
   return (
