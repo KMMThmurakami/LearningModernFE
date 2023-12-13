@@ -278,6 +278,65 @@ const butterflies: Butterfly = {
 };
 
 // =================================
+// 2-12
+// enum
+// https://typescriptbook.jp/reference/values-types-variables/enum
+// =================================
+
+enum OS {
+  Windows,
+  Mac,
+  Linux,
+}
+
+interface PC {
+  id: number;
+  OSType: OS;
+}
+
+const PC1: PC = {
+  id: 1,
+  OSType: OS.Windows,
+};
+
+const PC2: PC = {
+  id: 2,
+  OSType: OS.Mac,
+};
+
+// 列挙型(enum)の問題点と代替手段
+// https://typescriptbook.jp/reference/values-types-variables/enum/enum-problems-and-alternatives-to-enums
+
+// 公称型と構造的部分型
+// https://qiita.com/suin/items/52cf80021361168f6b0e
+
+// ※構造的部分型
+// https://typescriptbook.jp/reference/values-types-variables/structural-subtyping
+
+// TypeScriptは２つのクラスに継承関係がなかったとしても
+// 同じプロパティを持っていれば互換性がある
+
+// 文字列列挙型だけ公称型になる
+enum StringEnum {
+  Foo = "foo",
+}
+const foo1: StringEnum = StringEnum.Foo; // コンパイル通る
+// const foo2: StringEnum = "foo"; // コンパイルエラーになる
+
+class Animal {
+  public name: string = "";
+}
+
+class User {
+  public name: string = "";
+}
+
+let user: User = new User();
+let animal3: Animal = new Animal();
+user = animal3; // OK
+animal3 = user; // OK
+
+// =================================
 
 function App() {
   return (
