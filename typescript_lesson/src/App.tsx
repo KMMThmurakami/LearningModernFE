@@ -337,6 +337,84 @@ user = animal3; // OK
 animal3 = user; // OK
 
 // =================================
+// 2-13
+// 型の互換性
+// =================================
+
+const comp1 = "test";
+let comp2: string = comp1; // 抽象度の高いstring型に文字列リテラルは代入できる
+
+let comp3: string = "test";
+// let comp4: "test" = comp3; // 抽象度の低い文字列リテラルにstring型は代入できない
+
+let funcComp1 = (x: number) => {};
+let funcComp2 = (x: string) => {};
+
+// 引数のデータ型が異なるため代入できない
+// funcComp1 = funcComp2;
+// funcComp2 = funcComp1;
+
+// =================================
+// 2-14
+// ジェネリクス
+// https://typescriptbook.jp/reference/generics
+// =================================
+// ジェネリクスの発想は実はとてもシンプルで、「型も変数のように扱えるようにする」というもの
+// <T>は型変数名の定義(監修的にTなどがよく使われるが何でも良い)
+interface GEN<T> {
+  item: T;
+}
+
+// 実体化する時に初めてTの型が決まる
+const gen0: GEN<string> = { item: "hello" };
+// const gen1: GEN = { item: "hello" }; // エラーになる
+const gen2: GEN<number> = { item: 1 };
+
+// デフォルトの型を指定できる
+interface GEN1<T = string> {
+  item: T;
+}
+
+const gen3 = { item: "hello" };
+
+// extendsキーワードを用いることでジェネリクスの型Tを特定の型に限定することがで
+interface GEN2<T extends string | number> {
+  item: T;
+}
+
+const gen4: GEN2<string> = { item: "hello" };
+// const gen5: GEN2<boolean> = { item: true }; // エラーになる
+
+function funcGen<T>(props: T) {
+  return { item: props };
+}
+
+const gen6 = funcGen<string>("test");
+const gen7 = funcGen<string | null>(null);
+
+function funcGen1<T extends string | null>(props: T) {
+  return { item: props };
+}
+
+const gen8 = funcGen1("test");
+// const gen9 = funcGen1(1); // エラーになる
+
+interface Props {
+  price: number;
+}
+
+function funcGen3<T extends Props>(props: T) {
+  return { value: props.price };
+}
+
+const gen10 = funcGen3({ price: 10 });
+
+// アロー関数
+const funcGen4 = <T extends Props>(props: T) => {
+  return { value: props.price };
+};
+
+// =================================
 
 function App() {
   return (
