@@ -1,6 +1,8 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import Data from "./data.json";
+import TestComponent from "./testComponent";
 
 // =================================
 // 2-6
@@ -415,11 +417,27 @@ const funcGen4 = <T extends Props>(props: T) => {
 };
 
 // =================================
+// 2-15
+// JSON型推論
+// =================================
 
-function App() {
+// jsonの型を推論してくれる
+type INFO = typeof Data;
+
+// =================================
+// 2-16
+// React Hooks Props型
+// =================================
+
+// =================================
+
+// function App() {
+// FCはファンクショナルコンポーネントの略
+const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
+        <TestComponent text="hello" />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -435,6 +453,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;
