@@ -85,3 +85,10 @@ TypeScriptはJava等と違って構造的部分型
 セクション 2-16 まで
 <h1>{props.text}</h1>
 javascript式として埋め込むことで変数を受け取れる
+
+## 2024/12/18
+
+セクション 2-17
+useStateの引数の型について
+https://qiita.com/yamashin0616/items/43102dd617e2e0358183
+関数名の最初は大文字にする
