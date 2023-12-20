@@ -98,3 +98,12 @@ https://qiita.com/yamashin0616/items/43102dd617e2e0358183
 セクション 2-18
 Event handler データ型について
 セクション 2-16からいきなりReactの話になったので他の資料で詳しく見ていきたい
+
+## 2024/12/20
+
+【Discordクローン開発】React/Redux/Typescript/Firebaseで作るアプリ開発実践講座
+これをやっていく
+VSCode：インストール済み
+Node.js：インストール済み
+今日はシェルスクリプトについて時間を使ったので終わり
+明日から細かく進めていく
