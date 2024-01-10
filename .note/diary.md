@@ -127,6 +127,11 @@ scss 導入、サイドバーの雛形準備
 ## 2024/01/09
 
 過去の日付が間違っていたので修正
-Material UIをインストールした
+Material UI をインストールした
 インストール場所が間違っておりエラーが出ていた
-→discord_clone配下でnpm installしなければいけなかった
+→discord_clone 配下で npm install しなければいけなかった
+
+## 2024/01/10
+
+ヘッダー追加
+まだ React は出てこない(Material UI だけ)
