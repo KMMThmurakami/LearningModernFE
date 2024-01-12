@@ -134,4 +134,14 @@ Material UI をインストールした
 ## 2024/01/10
 
 ヘッダー追加
-まだ React は出てこない(Material UI だけ)
+まだ React っぽいのは出てこない(Material UI だけ)
+
+## 2024/01/12
+
+フッター追加
+Reactっぽくなってきた
+
+講座ではそのままSidebar.tsxに書いていたがコンポーネントを分けた
+そのため画像パスを変える必要があった
+https://zenn.dev/kiriyama/articles/20480ad223d36e
+こちらを参考にした
