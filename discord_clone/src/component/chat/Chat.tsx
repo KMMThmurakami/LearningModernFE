@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Chat.scss";
 import ChatHeader from "./ChatHeader";
+import ChatMessage from "./ChatMessage";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
 import GifBoxIcon from '@mui/icons-material/GifBox';
@@ -15,7 +16,8 @@ const Chat = () => {
 
       {/* chatMessage */}
       <div className="chatMessage">
-      chatMessage
+        <ChatMessage />
+        <ChatMessage />
       </div>
 
       {/* chatInput */}

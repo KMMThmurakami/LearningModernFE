@@ -1,0 +1,20 @@
+.message {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+  color: #ffffff;
+
+  .messageInfo {
+    padding: 10px;
+  }
+
+  .messageTimestamp {
+    color: #7b7c85;
+    margin-left: 20px;
+    font-size: 16px;
+  }
+}
+
+.message:not(:first-of-type) {
+  padding-top: 0;
+}

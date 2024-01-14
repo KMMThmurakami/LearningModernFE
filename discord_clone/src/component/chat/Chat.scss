@@ -4,6 +4,10 @@
   flex-grow: 1;
   background-color: #313338;
 
+  .chatMessage {
+    flex-grow: 1;
+  }
+
   .chatInput {
     display: flex;
     align-items: center;
@@ -47,7 +51,5 @@
         cursor: pointer;
       }
     }
-
-
   }
 }
