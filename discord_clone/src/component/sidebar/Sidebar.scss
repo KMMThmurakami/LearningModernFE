@@ -2,7 +2,6 @@
   display: flex;
   flex: 0.35;
   height: 100vh;
-  background-color: #313338; // TODO:後でhomeに移動させる
 
   .sidebarLeft {
     display: flex;
@@ -41,10 +40,11 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px;
+      padding-right: 10px;
     }
 
     .sidebarChannels {
-      padding: 13px;
+      padding: 10px;
     }
 
     .sidebarChannelsHeader {

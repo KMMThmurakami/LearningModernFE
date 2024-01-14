@@ -4,15 +4,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 10px 0;
   background-color: #1e1f22;
-  width: 93%;
-  border-top: 1px solid #232428;
-  margin-left: -13px;
+  width: 100%;
+  margin-left: -10px;
 
   .sidebarAccount {
     display: flex;
     align-items: center;
+    padding-left: 10px;
 
     img {
       width: 60px;
@@ -32,9 +32,15 @@
     }
   }
 
-  .sidebarVoice {
+  .sidebarFooterIconWrapper {
     display: flex;
     align-items: center;
     color: #686a6e;
+    padding-right: 10px;
+    gap: 12px;
+  }
+
+  .sidebarFooterIcon {
+    cursor: pointer;
   }
 }

@@ -15,10 +15,10 @@ function SidebarFooter() {
         </div>
       </div>
 
-      <div className="sidebarVoice">
-        <MicIcon />
-        <HeadphonesIcon />
-        <SettingIcon />
+      <div className="sidebarFooterIconWrapper">
+        <MicIcon className="sidebarFooterIcon" />
+        <HeadphonesIcon className="sidebarFooterIcon" />
+        <SettingIcon className="sidebarFooterIcon" />
       </div>
     </div>
   );
