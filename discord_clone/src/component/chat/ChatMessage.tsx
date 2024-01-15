@@ -1,20 +1,20 @@
-import React from 'react'
+import React from "react";
 import "./ChatMessage.scss";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 const ChatMessage = () => {
   return (
-    <div className='message'>
-      <AccountCircleIcon />
-      <div className='messageInfo'>
+    <div className="message">
+      <AccountCircleIcon className="chatMessageIcon" />
+      <div className="messageInfo">
         <h4>
           Kumamon
-          <span className='messageTimestamp'>2024/01/15</span>
+          <span className="messageTimestamp">2024/01/15</span>
         </h4>
-        <p className='messageText'>メッセージ本文</p>
+        <p className="messageText">メッセージ本文</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ChatMessage
+export default ChatMessage;

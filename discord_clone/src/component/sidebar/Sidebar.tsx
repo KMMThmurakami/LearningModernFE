@@ -10,7 +10,7 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="sidebarLeft">
         <div className="discordIconWrapper">
-          <img src="discordIcon.png" alt="" className="discordIcon"/>
+          <img src="discordIcon.png" alt="" className="discordIcon" />
         </div>
         <div className="sidebarIcon">
           <img src="logo192.png" alt="" />

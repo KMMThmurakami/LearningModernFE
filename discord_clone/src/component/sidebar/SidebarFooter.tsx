@@ -8,7 +8,7 @@ function SidebarFooter() {
   return (
     <div className="sidebarFooter">
       <div className="sidebarAccount">
-        <img src={`${process.env.PUBLIC_URL}/myIcon.png`} alt=""  />
+        <img src={`${process.env.PUBLIC_URL}/myIcon.png`} alt="" />
         <div className="accountName">
           <h4>kumamon</h4>
           <span>#0629</span>
