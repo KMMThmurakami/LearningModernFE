@@ -149,3 +149,8 @@ https://zenn.dev/kiriyama/articles/20480ad223d36e
 ## 2024/01/15
 
 フロントエンド完成
+
+## 2024/01/16
+
+firebase 準備
+https://console.firebase.google.com/project/discord-clone-b4a40/overview?hl=ja
