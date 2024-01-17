@@ -153,4 +153,14 @@ https://zenn.dev/kiriyama/articles/20480ad223d36e
 ## 2024/01/16
 
 firebase 準備
+npm install firebase
 https://console.firebase.google.com/project/discord-clone-b4a40/overview?hl=ja
+
+
+## 2024/01/17
+
+Reduxを導入
+
+npm install @reduxjs/toolkit
+npm install react-redux
+npm install @types/react-redux
