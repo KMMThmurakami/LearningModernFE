@@ -156,11 +156,30 @@ firebase 準備
 npm install firebase
 https://console.firebase.google.com/project/discord-clone-b4a40/overview?hl=ja
 
-
 ## 2024/01/17
 
-Reduxを導入
+Redux を導入
 
 npm install @reduxjs/toolkit
 npm install react-redux
 npm install @types/react-redux
+
+## 2024/01/18
+
+Redux は、ReactJS が扱う UI の state(状態)を管理をするためのフレームワーク
+https://redux-toolkit.js.org/api/configureStore
+https://redux-toolkit.js.org/usage/usage-with-typescript#createslice
+
+Slice とは？
+https://qiita.com/ryocha12/items/76acbf02e9e73bb0c5ec
+
+```
+ActionCreatorとStateとReducerを3つ同時に作成していきます。3つ同時に作成するのは生のReduxだけだとできないですが、Redux Toolkitを使用することで可能になります。これをSliceと呼びます。
+
+Stateとは初期化された値や更新された値が入っている今の状態です。
+ReducerとはStateを更新するための裏側の仕組みのことです。
+ActionCreatorとはStateを更新する具体的な処理のことです。
+```
+
+https://react-redux.js.org/api/provider
+store にアクセスできるようになる
