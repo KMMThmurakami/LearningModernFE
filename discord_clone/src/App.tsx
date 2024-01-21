@@ -3,12 +3,11 @@ import "./App.scss";
 import Sidebar from "./component/sidebar/Sidebar";
 import Chat from "./component/chat/Chat";
 import Login from "./component/login/Login";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "./app/hooks";
 
 function App() {
 
-  // const user = useSelector((state) => state.user.user);
-  const user =null;
+  const user = useAppSelector((state) => state.user);
 
   return (
     <div className="App">

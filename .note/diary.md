@@ -181,9 +181,62 @@ ReducerとはStateを更新するための裏側の仕組みのことです。
 ActionCreatorとはStateを更新する具体的な処理のことです。
 ```
 
+reducer（リデューサー）
+action を受け取り、action の内容に対応した state への変更を行う関数
+
+action
+通常 action type と payload をもつオブジェクトのことを指す 1
+
+action creator
+action を返り値とする関数。
+
 https://react-redux.js.org/api/provider
 store にアクセスできるようになる
 
 ## 2024/01/19
 
 ログインページ作成
+
+## 2024/01/20
+
+userSelector の使い方（ディスパッチ用の型指定）
+https://redux.js.org/usage/usage-with-typescript
+
+## 2024/01/21
+
+よくわからなくなってきたので整理
+
+discord_clone\src\App.tsx
+user を useAppSelector で取得
+↓
+discord_clone\src\app\hooks.ts
+TypedUseSelectorHook<RootState>
+
+TypedUseSelectorHook は、useSelector フックの型を安全に定義するための型
+<RootState> は、アプリケーション全体の Redux ストアのルート状態（RootState）の型を指定
+この型安全なフックは、Redux のセレクター関数を使用する際に、適切な型情報を提供する役割を果たす
+= useSelector;
+
+実際に useAppSelector を useSelector に割り当てている
+useSelector は、React Redux ライブラリで提供される状態選択のための標準的なフック
+
+discord_clone\src\app\store.ts
+RootState
+
+export type RootState = ReturnType<typeof store.getState>;
+現在の state を持っている？
+
+export const store = configureStore({
+reducer: userReducer,
+});
+
+userReducer
+import userReducer from "../features/userSlice";
+↓
+Redux ToolKit で提供されている Slice を用いると、Redux を使う際、Action と Reducer を 1 つにまとめて記述できる
+
+「今から始める Redux x React x TypeScript」
+https://qiita.com/it_tsumugi/items/f6efefe8757fd0fa00d8
+
+【React】Slice を用いた Redux の簡単な実装方法
+https://tekrog.com/how-to-use-slice
