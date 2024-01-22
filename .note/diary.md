@@ -240,3 +240,7 @@ https://qiita.com/it_tsumugi/items/f6efefe8757fd0fa00d8
 
 【React】Slice を用いた Redux の簡単な実装方法
 https://tekrog.com/how-to-use-slice
+
+## 2024/01/22
+
+firebase を使って google ログイン機能を実装
