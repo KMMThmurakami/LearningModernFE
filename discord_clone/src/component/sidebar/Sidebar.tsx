@@ -4,17 +4,16 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AddIcon from "@mui/icons-material/Add";
 import SidebarChannel from "./SidebarChannel";
 import SidebarFooter from "./SidebarFooter";
-import { collection, query } from "firebase/firestore/lite";
 import { db } from "../../firebase";
-import { onSnapshot } from "firebase/firestore";
+import { onSnapshot, collection, query } from "firebase/firestore";
 
 const Sidebar = () => {
-
   const q = query(collection(db, "channels"));
 
   useEffect(() => {
     onSnapshot(q, (querySnapShot) => {
       const channelsResult = [];
+      querySnapShot.docs.forEach((doc) => console.log(doc));
     });
   }, []);
 
