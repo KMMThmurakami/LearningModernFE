@@ -260,3 +260,7 @@ npm i react-error-boundary
 ## 2024/01/23
 
 軽量版を使うとおかしくなるらしい
+
+## 2024/01/23
+
+useState, useEffectでチャンネルを取得する
