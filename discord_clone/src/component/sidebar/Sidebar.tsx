@@ -65,7 +65,11 @@ const Sidebar = () => {
 
           <div className="sidebarChannelsList">
             {channels.map((channel) => (
-              <SidebarChannel />
+              <SidebarChannel
+                channel={channel}
+                id={channel.id}
+                key={channel.id}
+              />
             ))}
           </div>
 
