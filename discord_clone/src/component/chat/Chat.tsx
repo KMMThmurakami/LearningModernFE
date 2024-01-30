@@ -7,8 +7,11 @@ import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
 import GifBoxIcon from "@mui/icons-material/GifBox";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 import SendIcon from "@mui/icons-material/Send";
+import { useAppSelector } from "../../app/hooks";
 
 const Chat = () => {
+  // const channelName = useAppSelector((state) => state.channelName);
+
   return (
     <div className="chat">
       {/* chatHeader */}
