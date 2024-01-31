@@ -7,7 +7,7 @@ import { auth } from "../../firebase";
 import { useAppSelector } from "../../app/hooks";
 
 function SidebarFooter() {
-  const user = useAppSelector((state) => state.user);
+  const user = useAppSelector((state) => state.user.user);
 
   return (
     <div className="sidebarFooter">
