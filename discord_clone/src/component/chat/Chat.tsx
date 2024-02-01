@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Chat.scss";
 import ChatHeader from "./ChatHeader";
 import ChatMessage from "./ChatMessage";
@@ -10,7 +10,13 @@ import SendIcon from "@mui/icons-material/Send";
 import { useAppSelector } from "../../app/hooks";
 
 const Chat = () => {
+  const [inputText, setInputText] = useState<string>("");
   const channelName = useAppSelector((state) => state.channel.channelName);
+
+  const sendMessage = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
+    console.log(inputText);
+  };
 
   return (
     <div className="chat">
@@ -27,12 +33,15 @@ const Chat = () => {
       <div className="chatInput">
         <AddCircleIcon className="chatInputIcon" />
         <form>
-          <input type="text" placeholder="メッセージを送信" />
+          <input type="text" placeholder="メッセージを送信" onChange={(e: React.ChangeEvent<HTMLInputElement>) => 
+            setInputText(e.target.value)} 
+          />
           <div className="chatInputIcons">
             <CardGiftcardIcon />
             <GifBoxIcon />
             <EmojiEmotionsIcon />
-            <button type="submit" className="chatInputButton">
+            <button type="submit" className="chatInputButton" onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => 
+                {sendMessage(e)}}>
               <SendIcon className="chatHeaderIcon" />
             </button>
           </div>
