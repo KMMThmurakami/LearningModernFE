@@ -8,14 +8,33 @@ import GifBoxIcon from "@mui/icons-material/GifBox";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 import SendIcon from "@mui/icons-material/Send";
 import { useAppSelector } from "../../app/hooks";
+import { CollectionReference, DocumentData, DocumentReference, addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "../../firebase";
 
 const Chat = () => {
   const [inputText, setInputText] = useState<string>("");
   const channelName = useAppSelector((state) => state.channel.channelName);
+  const channelId = useAppSelector((state) => state.channel.channelId);
+  const user = useAppSelector((state) => state.user.user);
 
-  const sendMessage = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const sendMessage = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
-    console.log(inputText);
+
+    // channelsコレクションの中にあるmessageコレクションの中にメッセージ情報を入れる
+    const collectionRef: CollectionReference<DocumentData> = collection(
+      db,
+      "channels",
+      String(channelId),
+      "messages"
+    );
+
+    const docRef: DocumentReference<DocumentData> =await addDoc(collectionRef, {
+      message: inputText,
+      timestamp: serverTimestamp(),
+      user: user
+    });
+
+    console.log(docRef);
   };
 
   return (
