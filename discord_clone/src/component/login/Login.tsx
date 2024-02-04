@@ -9,7 +9,6 @@ const Login = () => {
     signInWithPopup(auth, provider).catch((err) => {
       alert(err.message);
     });
-    console.log("signIn");
   }
 
   return (
