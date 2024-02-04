@@ -8,7 +8,7 @@ import GifBoxIcon from "@mui/icons-material/GifBox";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 import SendIcon from "@mui/icons-material/Send";
 import { useAppSelector } from "../../app/hooks";
-import { CollectionReference, DocumentData, DocumentReference, Timestamp, addDoc, collection, onSnapshot, serverTimestamp } from "firebase/firestore";
+import { CollectionReference, DocumentData, Timestamp, addDoc, collection, onSnapshot, serverTimestamp } from "firebase/firestore";
 import { db } from "../../firebase";
 
 interface Messages {
@@ -41,7 +41,6 @@ const Chat = () => {
         });
       });
       setMessages(results);
-      console.log(results);
     });
   }, [channelId]);
 
@@ -56,13 +55,11 @@ const Chat = () => {
       "messages"
     );
 
-    const docRef: DocumentReference<DocumentData> =await addDoc(collectionRef, {
+    await addDoc(collectionRef, {
       message: inputText,
       timestamp: serverTimestamp(),
       user: user
     });
-
-    console.log(docRef);
   };
 
   return (
@@ -72,8 +69,9 @@ const Chat = () => {
 
       {/* chatMessage */}
       <div className="chatMessage">
-        <ChatMessage />
-        <ChatMessage />
+        {messages.map((message, index) => (
+          <ChatMessage key={index} message={message.message} timestamp={message.timestamp} user={message.user} />
+        ))}
       </div>
 
       {/* chatInput */}
