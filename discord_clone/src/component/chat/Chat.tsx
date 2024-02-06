@@ -8,7 +8,7 @@ import GifBoxIcon from "@mui/icons-material/GifBox";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 import SendIcon from "@mui/icons-material/Send";
 import { useAppSelector } from "../../app/hooks";
-import { CollectionReference, DocumentData, Timestamp, addDoc, collection, onSnapshot, serverTimestamp } from "firebase/firestore";
+import { CollectionReference, DocumentData, Timestamp, addDoc, collection, onSnapshot, orderBy, query, serverTimestamp } from "firebase/firestore";
 import { db } from "../../firebase";
 
 interface Messages {
@@ -30,8 +30,10 @@ const Chat = () => {
   const user = useAppSelector((state) => state.user.user);
 
   useEffect(() => {
-    let collectionRef = collection(db, "channels", String(channelId), "messages");
-    onSnapshot(collectionRef, (snapshot) => {
+    const collectionRef = collection(db, "channels", String(channelId), "messages");
+    const collectionRefOrderBy = query(collectionRef, orderBy("timestamp", "asc"));
+
+    onSnapshot(collectionRefOrderBy, (snapshot) => {
       let results: Messages[] = [];
       snapshot.docs.forEach((doc) => {
         results.push({
@@ -60,6 +62,7 @@ const Chat = () => {
       timestamp: serverTimestamp(),
       user: user
     });
+    setInputText("");
   };
 
   return (
@@ -80,6 +83,7 @@ const Chat = () => {
         <form>
           <input type="text" placeholder="メッセージを送信" onChange={(e: React.ChangeEvent<HTMLInputElement>) => 
             setInputText(e.target.value)} 
+            value={inputText}
           />
           <div className="chatInputIcons">
             <CardGiftcardIcon />
