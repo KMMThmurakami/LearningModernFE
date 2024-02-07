@@ -7,9 +7,13 @@ import SidebarFooter from "./SidebarFooter";
 import useCollection from "../../hooks/useCollection";
 import { db } from "../../firebase";
 import { addDoc, collection } from "firebase/firestore";
+import { channel } from "diagnostics_channel";
 
 const Sidebar = () => {
   const { documents: channels } = useCollection("channels");
+  const channelsOrderBy = channels.sort((a, b) =>
+    a.channel.channelName.localeCompare(b.channel.channelName)
+  );
 
   const addChannel = async () => {
     let channelName = prompt("新しいチャンネルを追加します");
@@ -50,7 +54,7 @@ const Sidebar = () => {
           </div>
 
           <div className="sidebarChannelsList">
-            {channels.map((channel) => (
+            {channelsOrderBy.map((channel) => (
               <SidebarChannel
                 channel={channel}
                 id={channel.id}

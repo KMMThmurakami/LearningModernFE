@@ -54,6 +54,13 @@
       padding: 10px;
     }
 
+    .sidebarChannelsList {
+      height: 80vh;
+      overflow-y: scroll;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
     .sidebarChannelsHeader {
       color: #ffffff;
       display: flex;
