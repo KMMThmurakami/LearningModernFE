@@ -3,3 +3,11 @@
   background-color: #313338;
   overflow: hidden;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e8e8e9;
+}

@@ -57,8 +57,8 @@
     .sidebarChannelsList {
       height: 80vh;
       overflow-y: scroll;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
+      // scrollbar-width: none;
+      // -ms-overflow-style: none;
     }
 
     .sidebarChannelsHeader {
@@ -75,5 +75,9 @@
         cursor: pointer;
       }
     }
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #2b2d31;
   }
 }

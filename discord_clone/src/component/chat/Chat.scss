@@ -4,13 +4,14 @@
   flex-grow: 1;
   background-color: #313338;
   height: 100vh;
+  padding-right: 10px;
 
   .chatMessage {
     height: 100vh;
     flex-grow: 1;
     overflow-y: scroll;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    // scrollbar-width: none;
+    // -ms-overflow-style: none;
   }
 
   .chatInput {
@@ -60,5 +61,9 @@
         cursor: pointer;
       }
     }
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #313338;
   }
 }
