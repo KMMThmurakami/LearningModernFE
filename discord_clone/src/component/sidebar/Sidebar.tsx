@@ -1,4 +1,3 @@
-import React from "react";
 import "./Sidebar.scss";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AddIcon from "@mui/icons-material/Add";
@@ -7,7 +6,6 @@ import SidebarFooter from "./SidebarFooter";
 import useCollection from "../../hooks/useCollection";
 import { db } from "../../firebase";
 import { addDoc, collection } from "firebase/firestore";
-import { channel } from "diagnostics_channel";
 
 const Sidebar = () => {
   const { documents: channels } = useCollection("channels");
