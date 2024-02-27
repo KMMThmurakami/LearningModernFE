@@ -317,3 +317,38 @@ https://qiita.com/k-penguin-sato/items/9373d87c57da3b74a9e6
 第 2 引数を指定なし=> Render 毎に第１引数の関数を実行。
 第 2 引数に[]を指定 => 最初の render 時に第１引数の関数を実行。
 第 2 引数に値の配列を指定 => 最初の render 時と指定された値に変化があった場合`のみに第１引数の関数を実行。
+
+## 2024/02/27
+
+デプロイする
+
+Firebase Hosting
+npm install -g firebase-tools
+
+firebase login
+失敗
+→node が18or20じゃないとダメ
+アップデート
+
+nodenv install -l
+nodenv install 18.12.1
+nodenv global 18.12.1
+
+firebase logout
+firebase login
+
+firebase init
+
+npm run build
+→失敗
+https://akamist.com/blog/archives/5420
+npm rebuild node-sass
+
+npm run build
+
+firebase deploy
+ Deploy complete!
+
+Hosting URL: https://discord-clone-b4a40.web.app
+
+デプロイ成功
