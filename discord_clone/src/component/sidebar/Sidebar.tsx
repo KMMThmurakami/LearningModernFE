@@ -29,9 +29,6 @@ const Sidebar = () => {
         <div className="discordIconWrapper">
           <img src="discordIcon.png" alt="" className="discordIcon" />
         </div>
-        <div className="sidebarIcon">
-          <img src="logo192.png" alt="" />
-        </div>
       </div>
 
       <div className="sidebarRight">
